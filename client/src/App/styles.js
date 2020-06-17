@@ -1,19 +1,23 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Application = styled.div`
-    font-family: Roboto;
-    font-weight: 300;
-    font-size: 25px;
-    font-style: italic;
-    color: white;
-    top: 20%;
-    position: absolute;
-    padding: 50px;
-    svg, span {
-        padding-left: 10px;
-    }
+  box-sizing: border-box;
+  top: 25%;
+  bottom: 25%;
+  left: 25%;
+  right: 25%;
+  position: absolute;
+  max-width: 50vw;
+  max-height: 50vh;
+
+  @media (max-width: 768px) {
+    max-width: 100vw;
+    max-height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 `;
 
-export {
-    Application,
-};
+export { Application };
