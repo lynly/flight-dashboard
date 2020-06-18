@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
+  p, li {
+    font-size: 14px;
+    line-height: 24px;
+  }
 `;
 
 export default GlobalStyle;

@@ -35,9 +35,12 @@ const Button = styled.button`
   color: #004066;
   overflow-wrap: break-word;
   padding: 4px 8px;
-  &:hover:active {
-    background: #004066;
-    color: white;
+  &:hover,
+  &:active {
+    &:not([disabled]) {
+      background: #004066;
+      color: white;
+    }
   }
   ${(props) =>
     props.disabled &&
@@ -59,13 +62,9 @@ const Row = styled.div`
 
 const Col = styled.div`
   flex-grow: 1;
+  @media (max-width: 768px) {
+    height: 33vh;
+  }
 `;
 
 export { Control, Button, Row, Col, Input };
-
-// ${(props) =>
-//   props.disabled &&
-//   css`
-//     border: 1px solid grey;
-//     color: grey;
-//   `}
