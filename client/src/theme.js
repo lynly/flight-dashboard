@@ -1,16 +1,20 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: Roboto;
-    background-color: #003366;
-    padding: 0;
-    margin: 0;
+  * {
     box-sizing: border-box;
   }
-  p, li {
-    font-size: 14px;
-    line-height: 24px;
+  html {
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    color: #242934;
+    background-color: #002664;
+  }
+  a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 `;
 

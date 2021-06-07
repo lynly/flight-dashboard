@@ -2,12 +2,14 @@ import 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import GlobalStyle from './theme';
 import store from './redux';
 import App from './App';
 
 const render = Component => {
     ReactDOM.render(
         <Provider store={store}>
+            <GlobalStyle />
             <Component />
         </Provider>
         , document.getElementById('cape-canaveral'));
