@@ -1,5 +1,6 @@
 import React from "react";
-import { Row, Col, Card } from "./styles";
+import { Card, Row, Col } from "../../components/index";
+
 
 const CapsuleCard = ({ capsule }) => {
   const {
@@ -20,13 +21,13 @@ const CapsuleCard = ({ capsule }) => {
       <Row>
         <Col>
           <p>
-            <strong>capsule id: </strong>
+            <strong>Capsule id: </strong>
             {capsule_id}
           </p>
         </Col>
         <Col>
           <p>
-            <strong>capsule serial: </strong>
+            <strong>Capsule serial: </strong>
             {capsule_serial}
           </p>
         </Col>
@@ -34,13 +35,13 @@ const CapsuleCard = ({ capsule }) => {
       <Row>
         <Col>
           <p>
-            <strong>details: </strong>
+            <strong>Details: </strong>
             {details}
           </p>
         </Col>
         <Col>
           <p>
-            <strong>landings:</strong>
+            <strong>Landings:</strong>
             {landings}
           </p>
         </Col>
@@ -48,21 +49,21 @@ const CapsuleCard = ({ capsule }) => {
       <Row>
         <Col>
           <p>
-            <strong>missions: </strong>
+            <strong>Missions: </strong>
           </p>
           <ul>
             {missions &&
               missions.map((mission, index) => (
                 <li key={index}>
-                  <strong>name: </strong> {mission.name},{" "}
-                  <strong>flight: </strong> {mission.flight}
+                  <strong>Name: </strong> {mission.name},{" "}
+                  <strong>Flight: </strong> {mission.flight}
                 </li>
               ))}
           </ul>
         </Col>
         <Col>
           <p>
-            <strong>status: </strong>
+            <strong>Status: </strong>
             {status}
           </p>
         </Col>
@@ -70,13 +71,13 @@ const CapsuleCard = ({ capsule }) => {
       <Row>
         <Col>
           <p>
-            <strong>original launch: </strong>
+            <strong>Original launch: </strong>
             {original_launch}
           </p>
         </Col>
         <Col>
           <p>
-            <strong>original launch unix: </strong>
+            <strong>Original launch unix: </strong>
             {original_launch_unix}
           </p>
         </Col>
@@ -84,13 +85,13 @@ const CapsuleCard = ({ capsule }) => {
       <Row>
         <Col>
           <p>
-            <strong>reuse count:</strong>
+            <strong>Reuse count:</strong>
             {reuse_count}
           </p>
         </Col>
         <Col>
           <p>
-            <strong>type: </strong>
+            <strong>Type: </strong>
             {type}
           </p>
         </Col>

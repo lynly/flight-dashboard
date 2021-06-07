@@ -3,7 +3,7 @@ import CapsuleCard from "../CapsuleCard";
 
 const CapsuleList = ({ capsules }) => (
   <>
-    <h3>All Capsules</h3>
+    <h1>All Capsules</h1>
     {capsules.map((capsule, index) => (
       <CapsuleCard key={index} capsule={capsule} />
     ))}

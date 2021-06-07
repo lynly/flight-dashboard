@@ -1,26 +1,39 @@
 import { hot } from "react-hot-loader/root";
 import React, { useState } from "react";
-import GlobalStyle from "../theme";
-import { Application } from "./styles";
 import FlightDashboard from "./FlightDashboard";
 import axios from "axios";
 
 const App = () => {
-  const [capsulesState, setCapsulesState] = useState({
+  const [appState, setAppState] = useState({
     isLoading: false,
     capsules: undefined,
+    padDetails: undefined,
+    hasError: false,
+    current: undefined
   });
 
   const apiUrlCapsules = "https://api.spacexdata.com/v3/capsules";
+  const apiUrlLandingPad = "https://api.spacexdata.com/v3/landpads";
 
   const fetchCapsules = async () => {
-    setCapsulesState({ isLoading: true });
+    setAppState({ isLoading: true });
     try {
       const response = await axios.get(apiUrlCapsules);
-      setCapsulesState({ isLoading: false, capsules: response.data });
+      setAppState({ isLoading: false, capsules: response.data });
     } catch (error) {
       console.log(error);
       alert(error);
+    }
+  };
+
+  const fetchLandingPad = async (id) => {
+    setAppState({ isLoading: true });
+    try {
+      const response = await axios.get(`${apiUrlLandingPad}/${id}`);
+      setAppState({ isLoading: false, padDetails: response.data });
+    } catch (error) {
+      console.log(error);
+      setAppState({ hasError: true })
     }
   };
 
@@ -28,16 +41,22 @@ const App = () => {
     fetchCapsules();
   };
 
+  const handleOnClickLandingPad = (id) => {
+    if (id) {
+      fetchLandingPad(id)
+    } else {
+      setAppState({ hasError: true })
+    }
+  };
+
+
+
   return (
-    <>
-      <Application>
-        <FlightDashboard
-          allCapsules={capsulesState}
-          handleOnClickCapsules={handleOnClickCapsules}
-        />
-      </Application>
-      <GlobalStyle />
-    </>
+    <FlightDashboard
+      appState={appState}
+      handleOnClickCapsules={handleOnClickCapsules}
+      handleOnClickLandingPad={handleOnClickLandingPad}
+    />
   );
 };
 

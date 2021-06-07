@@ -1,15 +1,25 @@
 import React from "react";
-import { Dashboard } from "./styles";
+import Dashboard from "./styles";
 import DisplayConsole from "../DisplayConsole";
 import ControlConsole from "../ControlConsole";
+import { Row, Col } from "../../components/index";
 
 const FlightDashboard = ({
-  allCapsules,
+  appState,
   handleOnClickCapsules,
+  handleOnClickLandingPad,
 }) => (
     <Dashboard>
-      <DisplayConsole allCapsules={allCapsules} />
-      <ControlConsole handleOnClickCapsules={handleOnClickCapsules} />
+      <Row>
+        <Col>
+          <DisplayConsole appState={appState} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <ControlConsole handleOnClickCapsules={handleOnClickCapsules} handleOnClickLandingPad={handleOnClickLandingPad} appState={appState} />
+        </Col>
+      </Row>
     </Dashboard>
   );
 

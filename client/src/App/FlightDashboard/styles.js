@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 const Dashboard = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    height: 100vh;
-  }
   background-color: white;
-  padding: 12px;
+  
+  @media (min-width: 48rem) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  } 
 `;
 
-export { Dashboard };
+export default Dashboard;
