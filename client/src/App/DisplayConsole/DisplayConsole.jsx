@@ -10,7 +10,7 @@ const DisplayConsole = ({ appState }) => {
 
   return (
     <Display>
-      <Row justifyContent='baseline'>
+      <Row>
         <Col>
           {!isLoading && (!capsules && !padDetails) && <EmptyState />}
           {isLoading && (!capsules || !padDetails) && <p>Loading ...</p>}

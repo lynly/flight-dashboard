@@ -9,7 +9,6 @@ const App = () => {
     capsules: undefined,
     padDetails: undefined,
     hasError: false,
-    current: undefined
   });
 
   const apiUrlCapsules = "https://api.spacexdata.com/v3/capsules";
